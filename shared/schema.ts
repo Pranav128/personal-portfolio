@@ -24,6 +24,7 @@ const blogPostSchema = new mongoose.Schema({
   category: { type: String, required: true },
   publishedAt: { type: Date, default: Date.now },
   imageUrl: { type: String },
+  url: { type: String, required: true }
 });
 
 // MongoDB Models
@@ -50,6 +51,8 @@ export const insertBlogPostSchema = z.object({
   excerpt: z.string().min(1),
   category: z.string().min(1),
   imageUrl: z.string().optional(),
+  url: z.string().url().optional(),
+  publishedAt: z.date().optional()
 });
 
 // TypeScript types
@@ -79,4 +82,5 @@ export type BlogPost = {
   category: string;
   publishedAt: Date;
   imageUrl?: string;
+  url: string;
 };

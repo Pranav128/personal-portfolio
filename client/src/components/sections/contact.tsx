@@ -6,7 +6,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
-import { Mail, Phone, MapPin, Send, Linkedin, Github, MessageSquare, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
+import {FaLinkedin, FaGithub, FaWhatsapp, FaInstagram  } from 'react-icons/fa'
+import { FaMedium } from "react-icons/fa6";
 import { personalInfo } from "@/lib/data";
 
 export function Contact() {
@@ -66,7 +68,7 @@ export function Contact() {
         </div>
         
         <div className="grid md:grid-cols-2 gap-12">
-          <div>
+          <div className="form-container-contact">
             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
             <div className="space-y-6">
               <div className="flex items-center gap-4 hover:bg-muted/50 p-4 rounded-lg transition-colors group">
@@ -124,7 +126,7 @@ export function Contact() {
                   rel="noopener noreferrer"
                   className="social-link"
                 >
-                  <Linkedin className="w-5 h-5" />
+                  <FaLinkedin className="w-5 h-5" />
                 </a>
                 <a
                   href={personalInfo.socialLinks.github}
@@ -132,7 +134,7 @@ export function Contact() {
                   rel="noopener noreferrer"
                   className="social-link"
                 >
-                  <Github className="w-5 h-5" />
+                  <FaGithub className="w-5 h-5" />
                 </a>
                 <a
                   href={personalInfo.socialLinks.whatsapp}
@@ -140,7 +142,7 @@ export function Contact() {
                   rel="noopener noreferrer"
                   className="social-link"
                 >
-                  <MessageSquare className="w-5 h-5" />
+                  <FaWhatsapp className="w-5 h-5" />
                 </a>
                 <a
                   href={personalInfo.socialLinks.instagram}
@@ -148,13 +150,21 @@ export function Contact() {
                   rel="noopener noreferrer"
                   className="social-link"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <FaInstagram className="w-5 h-5" />
+                </a>
+                <a
+                  href={personalInfo.socialLinks.medium}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-link"
+                >
+                  <FaMedium className="w-5 h-5" />
                 </a>
               </div>
             </div>
           </div>
           
-          <div>
+          <div className="form-container-contact">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
