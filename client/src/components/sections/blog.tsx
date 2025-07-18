@@ -35,7 +35,7 @@ export function Blog() {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts?.map((post) => (
-            <div key={post.id} className="blog-card">
+            <div key={post._id} className="blog-card">
               <div className="p-6">
                 {post.imageUrl && (
                   <div className="mb-4">

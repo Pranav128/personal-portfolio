@@ -26,20 +26,21 @@ Preferred communication style: Simple, everyday language.
 - **Request Logging**: Custom middleware for API request logging
 
 ### Data Storage Solutions
-- **Database**: PostgreSQL (active and configured via Drizzle)
-- **ORM**: Drizzle ORM for type-safe database operations
-- **Connection**: Neon Database serverless connection
-- **Production Storage**: DatabaseStorage implementation using PostgreSQL
-- **Schema**: Shared schema definitions with Zod validation
-- **Tables**: users, contacts, blog_posts with proper relations and constraints
+- **Database**: MongoDB with Mongoose ODM (hybrid with memory fallback)
+- **ODM**: Mongoose for MongoDB object modeling and validation
+- **Connection**: Local MongoDB instance with fallback to memory storage
+- **Production Storage**: MongoDBStorage implementation with automatic fallback
+- **Schema**: Mongoose schemas with Zod validation for API inputs
+- **Collections**: users, contacts, blog_posts with proper schema validation
 
 ## Key Components
 
 ### Database Schema
-- **Users**: Basic user authentication structure
-- **Contacts**: Contact form submissions with timestamps
-- **Blog Posts**: Blog content with metadata and publishing dates
-- **Validation**: Zod schemas for runtime type checking and validation
+- **Users**: Basic user authentication structure with MongoDB ObjectId
+- **Contacts**: Contact form submissions with timestamps and MongoDB ObjectId
+- **Blog Posts**: Blog content with metadata, publishing dates, and MongoDB ObjectId  
+- **Validation**: Mongoose schemas for data modeling and Zod schemas for API validation
+- **Fallback**: Automatic memory storage fallback when MongoDB is unavailable
 
 ### API Endpoints
 - `POST /api/contact` - Submit contact form
