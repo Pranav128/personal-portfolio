@@ -1,4 +1,4 @@
-# Portfolio Website - Replit Configuration
+# Portfolio Website 
 
 ## Overview
 
