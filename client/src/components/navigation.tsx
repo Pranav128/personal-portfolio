@@ -67,7 +67,6 @@ export function Navigation() {
       <nav className="fixed top-0 left-0 right-0 z-50 glass-effect">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-16">
-            <div className="gradient-text text-xl font-bold">Pranav Pisal</div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
