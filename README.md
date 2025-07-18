@@ -1,138 +1,113 @@
-# Portfolio Website 
+# 🌟 **Pranav Pisal – Personal Portfolio Website**
 
-## Overview
+<img src="./public/screenshots/home.png" alt="Portfolio Preview">
 
-This is a full-stack portfolio website built with modern web technologies. The application showcases professional experience, skills, projects, and includes a blog and contact functionality. It features a sleek, responsive design with smooth animations and a professional presentation.
+*A modern, responsive, and minimal portfolio website built to showcase my skills, projects, and achievements.*
 
-## User Preferences
 
-Preferred communication style: Simple, everyday language.
+## 📌 **Table of Contents**
 
-## System Architecture
+&nbsp; [🔗 Live Demo](#-live-demo)<br>
+&nbsp; [🚀 About the Project](#-about-the-project)<br>
+&nbsp; [✨ Features](#-features)<br>
+&nbsp; [📷 Screenshots](#-screenshots)<br>
+&nbsp; [🛠️ Tech Stack](#️-tech-stack)<br>
+&nbsp; [📂 Project Structure](#-project-structure)<br>
+&nbsp; [⚙️ Installation & Setup](#️-installation--setup)<br>
+&nbsp; [🤝 Contribution Guidelines](#-contribution-guidelines)<br>
+&nbsp; [📜 License](#-license)<br>
+&nbsp; [📬 Contact](#-contact)
 
-### Frontend Architecture
-- **Framework**: React 18 with TypeScript
-- **Styling**: TailwindCSS with shadcn/ui components
-- **Build Tool**: Vite for fast development and optimized builds
-- **State Management**: TanStack Query for server state management
-- **Routing**: Wouter for lightweight client-side routing
-- **UI Components**: Radix UI primitives with custom theming
+## 🔗 **Live Demo**
 
-### Backend Architecture
-- **Runtime**: Node.js with Express.js
-- **Language**: TypeScript with ES modules
-- **API Design**: RESTful API with JSON responses
-- **Error Handling**: Centralized error middleware with proper HTTP status codes
-- **Request Logging**: Custom middleware for API request logging
+[🌐 **View Live Portfolio**](https://pranav-pisal.onrender.com/) 
 
-### Data Storage Solutions
-- **Database**: MongoDB with Mongoose ODM (hybrid with memory fallback)
-- **ODM**: Mongoose for MongoDB object modeling and validation
-- **Connection**: Local MongoDB instance with fallback to memory storage
-- **Production Storage**: MongoDBStorage implementation with automatic fallback
-- **Schema**: Mongoose schemas with Zod validation for API inputs
-- **Collections**: users, contacts, blog_posts with proper schema validation
+## 🚀 **About the Project**
 
-## Key Components
+This is my **personal portfolio website**, designed to:<br>
+&nbsp; ✔ Showcase my **projects, skills, and achievements**<br>
+&nbsp; ✔ Provide an **easy way to connect with me**<br>
+&nbsp; ✔ Be a **single source of truth for my professional presence**
 
-### Database Schema
-- **Users**: Basic user authentication structure with MongoDB ObjectId
-- **Contacts**: Contact form submissions with timestamps and MongoDB ObjectId
-- **Blog Posts**: Blog content with metadata, publishing dates, and MongoDB ObjectId  
-- **Validation**: Mongoose schemas for data modeling and Zod schemas for API validation
-- **Fallback**: Automatic memory storage fallback when MongoDB is unavailable
+The website is optimized for performance, SEO-friendly, and suggests **Desktop Mode** for the best experience on mobile devices.
 
-### API Endpoints
-- `POST /api/contact` - Submit contact form
-- `GET /api/contacts` - Retrieve all contacts (admin)
-- `GET /api/blog` - Fetch blog posts
-- `POST /api/blog` - Create new blog post
+## ✨ **Features**
 
-### Frontend Sections
-- **Hero**: Dynamic typing animation with call-to-action
-- **About**: Professional introduction with achievements
-- **Skills**: Technical skills with animated progress bars
-- **Projects**: Portfolio showcase with project cards
-- **Experience**: Timeline of work experience and education
-- **Certifications**: Professional certifications and awards
-- **Blog**: Dynamic blog posts from API
-- **Contact**: Contact form with validation and submission
+✅ Fully responsive (Optimized for desktop & mobile) <br>
+✅ Light/Dark theme support<br>
+✅ Smooth page transitions<br>
+✅ Projects with live demo & GitHub links<br>
+✅ Contact form & social links<br>
+✅ SEO-friendly & fast-loading---
 
-### UI Features
-- **Theme Support**: Light/dark mode toggle with system preference detection
-- **Responsive Design**: Mobile-first approach with breakpoint optimization
-- **Animations**: Smooth scroll, typing effects, and CSS transitions
-- **Glass Morphism**: Modern glass effect styling
-- **Navigation**: Smooth scrolling navigation with active section highlighting
+## 📷 **Screenshots**
 
-## Data Flow
+| Home Section                              | Projects Section                                  | Contact Section                              |
+| -------------------------------------- | ---------------------------------------------- | -------------------------------------------- |
+| <img src="./public/screenshots/home.png"> | <image src="./public/screenshots/projects.png"> | <image src="./public/screenshots/contact.png"> |
 
-### Contact Form Submission
-1. User fills out contact form
-2. Form validation using Zod schemas
-3. API request to `/api/contact` endpoint
-4. Data stored in database via Drizzle ORM
-5. Success/error feedback to user via toast notifications
+| Experiense  Section                              | Skills Section                                  | Blogs Section Section                              |
+| -------------------------------------- | ---------------------------------------------- | -------------------------------------------- |
+| <img src="./public/screenshots/experience.png"> | <image src="./public/screenshots/skills.png"> | <image src="./public/screenshots/blogs.png"> |
 
-### Blog Content
-1. Blog posts fetched from `/api/blog` endpoint
-2. Data cached using TanStack Query
-3. Posts displayed with category badges and timestamps
-4. Responsive grid layout for optimal viewing
+## 🛠️ **Tech Stack**
 
-### Theme Management
-1. Theme preference stored in localStorage
-2. System preference detection via media queries
-3. CSS variables for consistent theming
-4. Smooth transitions between light/dark modes
+### **Core Technologies**
 
-## External Dependencies
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge\&logo=react\&logoColor=61DAFB) &nbsp; 
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge\&logo=typescript\&logoColor=white) &nbsp; 
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge\&logo=tailwind-css\&logoColor=white) &nbsp; 
 
-### Core Dependencies
-- **@tanstack/react-query**: Server state management
-- **@radix-ui/***: Accessible UI primitives
-- **drizzle-orm**: Type-safe database operations
-- **@neondatabase/serverless**: PostgreSQL connection
-- **zod**: Schema validation
-- **class-variance-authority**: Component variant management
-- **clsx & tailwind-merge**: Utility class management
+### **Deployment**
 
-### Development Tools
-- **Vite**: Build tool and development server
-- **TypeScript**: Type safety across the stack
-- **ESBuild**: Fast JavaScript bundler
-- **PostCSS**: CSS processing
-- **Tailwind CSS**: Utility-first CSS framework
+![Render](https://img.shields.io/badge/Render-000000?style=for-the-badge\&logo=render\&logoColor=white)
 
-### UI Enhancement
-- **Lucide React**: Icon library
-- **Embla Carousel**: Carousel functionality
-- **Wouter**: Lightweight routing
-- **Date-fns**: Date manipulation utilities
+## ⚙️ **Installation & Setup**
 
-## Deployment Strategy
+Clone and run locally:
 
-### Build Process
-1. **Frontend Build**: Vite builds React app to `dist/public`
-2. **Backend Build**: ESBuild bundles Express server to `dist/index.js`
-3. **Type Checking**: TypeScript compilation validation
-4. **Database Migration**: Drizzle migrations applied via `db:push`
+```bash
+# 1️⃣ Clone repo
+git clone https://github.com/Pranav128/portfolio-website.git
 
-### Environment Configuration
-- **Development**: `NODE_ENV=development` with hot reload
-- **Production**: `NODE_ENV=production` with optimized builds
-- **Database**: PostgreSQL connection via `DATABASE_URL` environment variable
+# 2️⃣ Navigate into project
+cd portfolio-website
 
-### Deployment Commands
-- `npm run dev` - Development server with hot reload
-- `npm run build` - Production build
-- `npm run start` - Production server
-- `npm run db:push` - Database schema updates
+# 3️⃣ Install dependencies
+npm install
 
-### Server Configuration
-- **Static Files**: Express serves built frontend from `dist/public`
-- **API Routes**: Express handles API endpoints under `/api`
-- **Fallback**: SPA routing handled by serving index.html for unknown routes
-- **Error Handling**: Comprehensive error middleware for production stability
+# 4️⃣ Run locally
+npm run dev
 
-The application is designed to be deployed on platforms like Replit, Vercel, or traditional VPS environments with minimal configuration changes.
+# 5️⃣ Build for production
+npm run build
+```
+
+## 🤝 **Contribution Guidelines**
+
+Contributions are welcome! To improve design, performance, or add features:
+
+1. **Fork** the repo
+2. **Create a new branch** (`git checkout -b feature/amazing-feature`)
+3. **Commit changes** (`git commit -m 'Add amazing feature'`)
+4. **Push to branch** (`git push origin feature/amazing-feature`)
+5. Open a **Pull Request** 🎉
+
+---
+
+## 📜 **License**
+
+This project is licensed under the [**MIT License.**](LICENSE)
+
+## 📬 **Contact**
+
+👤 **Pranav Pisal** <br>
+📧 Email: [pranavpisal2528@gmail.com](mailto:pranavpisal2528@gmail.com) <br>
+🔗 LinkedIn: [linkedin.com/in/pranav-pisal-06a4271b7](https://www.linkedin.com/in/pranav-pisal-06a4271b7/) <br>
+💻 GitHub: [github.com/Pranav128](https://github.com/Pranav128)<br>
+🌐 Portfolio: [pranav128.github.io/pranav\_pisal\_portfolio.github.io](https://pranav128.github.io/pranav_pisal_portfolio.github.io/)
+
+
+✨ **If you like this project, don’t forget to ⭐ the repository!**
+
+---
