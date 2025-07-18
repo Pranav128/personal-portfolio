@@ -25,10 +25,17 @@ export function Hero() {
               {personalInfo.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button className="btn-primary">
-                <Download className="w-4 h-4 mr-2" />
-                Download CV
-              </Button>
+              <a
+                href="https://drive.google.com/file/d/1vuxT8D-ZQbSPeuUahSuq-cwC3Glm2OWB/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+              >
+                <Button className="btn-primary">
+                  <Download className="w-4 h-4 mr-2" />
+                  Download CV
+                </Button>
+              </a>
               <Button 
                 variant="outline" 
                 className="border-primary text-primary hover:bg-primary hover:text-white"
