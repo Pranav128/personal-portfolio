@@ -1,5 +1,8 @@
-import { Linkedin, Github, Code, Terminal } from "lucide-react";
 import { personalInfo, achievements } from "@/lib/data";
+import {FaLinkedin, FaGithub, FaWhatsapp, FaInstagram  } from 'react-icons/fa'
+import { SiLeetcode, SiGeeksforgeeks  } from "react-icons/si";
+import { FaMedium } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 
 export function About() {
   return (
@@ -16,6 +19,12 @@ export function About() {
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
+            <img
+              src={personalInfo.aboutImage2}
+              alt="Modern coding workspace"
+              className="rounded-2xl shadow-2xl"
+            />
+            <br></br>
             <img
               src={personalInfo.aboutImage}
               alt="Modern coding workspace"
@@ -46,14 +55,14 @@ export function About() {
               ))}
             </div>
             
-            <div className="flex gap-4">
+            <div className="flex  gap-3">
               <a
                 href={personalInfo.socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
               >
-                <Linkedin className="w-5 h-5" />
+                <FaLinkedin className="w-5 h-5" />
               </a>
               <a
                 href={personalInfo.socialLinks.github}
@@ -61,7 +70,7 @@ export function About() {
                 rel="noopener noreferrer"
                 className="social-link"
               >
-                <Github className="w-5 h-5" />
+                <FaGithub className="w-5 h-5" />
               </a>
               <a
                 href={personalInfo.socialLinks.leetcode}
@@ -69,7 +78,7 @@ export function About() {
                 rel="noopener noreferrer"
                 className="social-link"
               >
-                <Code className="w-5 h-5" />
+                <SiLeetcode  className="w-5 h-5" />
               </a>
               <a
                 href={personalInfo.socialLinks.geeksforgeeks}
@@ -77,8 +86,40 @@ export function About() {
                 rel="noopener noreferrer"
                 className="social-link"
               >
-                <Terminal className="w-5 h-5" />
+                <SiGeeksforgeeks className="w-5 h-5" />
               </a>
+              <a
+                href={personalInfo.socialLinks.medium}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                <FaMedium className="w-5 h-5" />
+              </a>
+              <a
+                href={personalInfo.socialLinks.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                <FaWhatsapp className="w-5 h-5" />
+              </a>
+              <a
+                href={personalInfo.socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                <FaInstagram className="w-5 h-5" />
+              </a>              
+              <a
+                href={personalInfo.socialLinks.mail}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                <MdEmail className="w-5 h-5" />
+              </a>               
             </div>
           </div>
         </div>
