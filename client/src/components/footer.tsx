@@ -1,5 +1,6 @@
-import { Github, Linkedin, Code, Terminal } from "lucide-react";
 import { personalInfo } from "@/lib/data";
+import { FaGithub, FaLinkedin} from "react-icons/fa";
+import { SiLeetcode, SiGeeksforgeeks  } from "react-icons/si";
 
 export function Footer() {
   return (
@@ -19,7 +20,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="social-link"
             >
-              <Linkedin className="w-5 h-5" />
+              <FaLinkedin className="w-5 h-5" />
             </a>
             <a
               href={personalInfo.socialLinks.github}
@@ -27,7 +28,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="social-link"
             >
-              <Github className="w-5 h-5" />
+              <FaGithub className="w-5 h-5" />
             </a>
             <a
               href={personalInfo.socialLinks.leetcode}
@@ -35,7 +36,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="social-link"
             >
-              <Code className="w-5 h-5" />
+              <SiLeetcode className="w-5 h-5" />
             </a>
             <a
               href={personalInfo.socialLinks.geeksforgeeks}
@@ -43,7 +44,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="social-link"
             >
-              <Terminal className="w-5 h-5" />
+              <SiGeeksforgeeks className="w-5 h-5" />
             </a>
           </div>
           <div className="border-t border-border pt-8">
