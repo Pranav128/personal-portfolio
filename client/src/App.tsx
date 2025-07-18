@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
+import { DesktopModeSuggestion } from "./components/DesktopModeSuggestion";
 
 function Router() {
   return (
@@ -19,10 +20,11 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
+      <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
         <TooltipProvider>
           <Toaster />
           <Router />
+          <DesktopModeSuggestion /> 
         </TooltipProvider>
       </ThemeProvider>
     </QueryClientProvider>
