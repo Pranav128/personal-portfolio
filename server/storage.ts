@@ -1,4 +1,6 @@
 import { users, contacts, blogPosts, type User, type InsertUser, type Contact, type InsertContact, type BlogPost, type InsertBlogPost } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -12,103 +14,88 @@ export interface IStorage {
   createBlogPost(post: InsertBlogPost): Promise<BlogPost>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  private contacts: Map<number, Contact>;
-  private blogPosts: Map<number, BlogPost>;
-  private currentUserId: number;
-  private currentContactId: number;
-  private currentBlogPostId: number;
-
+export class DatabaseStorage implements IStorage {
   constructor() {
-    this.users = new Map();
-    this.contacts = new Map();
-    this.blogPosts = new Map();
-    this.currentUserId = 1;
-    this.currentContactId = 1;
-    this.currentBlogPostId = 1;
-    
-    // Initialize with sample blog posts
+    // Initialize with sample blog posts if they don't exist
     this.initializeBlogPosts();
   }
 
-  private initializeBlogPosts() {
-    const samplePosts: InsertBlogPost[] = [
-      {
-        title: "Best Practices for Java Development",
-        content: "Exploring modern Java development practices and design patterns that can help you write cleaner, more maintainable code...",
-        excerpt: "Exploring modern Java development practices and design patterns that can help you write cleaner, more maintainable code.",
-        category: "Java",
-        imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
-      },
-      {
-        title: "Building Scalable APIs with Spring Boot",
-        content: "Learn how to build robust and scalable REST APIs using Spring Boot with proper architecture and best practices...",
-        excerpt: "Learn how to build robust and scalable REST APIs using Spring Boot with proper architecture and best practices.",
-        category: "Spring Boot",
-        imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
-      },
-      {
-        title: "Database Optimization Techniques",
-        content: "Essential database optimization strategies to improve application performance and ensure efficient data management...",
-        excerpt: "Essential database optimization strategies to improve application performance and ensure efficient data management.",
-        category: "Database",
-        imageUrl: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
-      }
-    ];
+  private async initializeBlogPosts() {
+    try {
+      const existingPosts = await db.select().from(blogPosts);
+      if (existingPosts.length === 0) {
+        const samplePosts: InsertBlogPost[] = [
+          {
+            title: "Best Practices for Java Development",
+            content: "Exploring modern Java development practices and design patterns that can help you write cleaner, more maintainable code...",
+            excerpt: "Exploring modern Java development practices and design patterns that can help you write cleaner, more maintainable code.",
+            category: "Java",
+            imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
+          },
+          {
+            title: "Building Scalable APIs with Spring Boot",
+            content: "Learn how to build robust and scalable REST APIs using Spring Boot with proper architecture and best practices...",
+            excerpt: "Learn how to build robust and scalable REST APIs using Spring Boot with proper architecture and best practices.",
+            category: "Spring Boot",
+            imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
+          },
+          {
+            title: "Database Optimization Techniques",
+            content: "Essential database optimization strategies to improve application performance and ensure efficient data management...",
+            excerpt: "Essential database optimization strategies to improve application performance and ensure efficient data management.",
+            category: "Database",
+            imageUrl: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
+          }
+        ];
 
-    samplePosts.forEach(post => {
-      this.createBlogPost(post);
-    });
+        await db.insert(blogPosts).values(samplePosts);
+      }
+    } catch (error) {
+      console.error('Error initializing blog posts:', error);
+    }
   }
 
   async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentUserId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
     return user;
   }
 
   async createContact(insertContact: InsertContact): Promise<Contact> {
-    const id = this.currentContactId++;
-    const contact: Contact = { 
-      ...insertContact, 
-      id, 
-      createdAt: new Date() 
-    };
-    this.contacts.set(id, contact);
+    const [contact] = await db
+      .insert(contacts)
+      .values(insertContact)
+      .returning();
     return contact;
   }
 
   async getContacts(): Promise<Contact[]> {
-    return Array.from(this.contacts.values());
+    return await db.select().from(contacts);
   }
 
   async getBlogPosts(): Promise<BlogPost[]> {
-    return Array.from(this.blogPosts.values());
+    return await db.select().from(blogPosts);
   }
 
   async createBlogPost(insertBlogPost: InsertBlogPost): Promise<BlogPost> {
-    const id = this.currentBlogPostId++;
-    const blogPost: BlogPost = { 
-      ...insertBlogPost, 
-      id, 
-      publishedAt: new Date(),
-      imageUrl: insertBlogPost.imageUrl || null
-    };
-    this.blogPosts.set(id, blogPost);
+    const [blogPost] = await db
+      .insert(blogPosts)
+      .values(insertBlogPost)
+      .returning();
     return blogPost;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();

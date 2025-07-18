@@ -26,11 +26,12 @@ Preferred communication style: Simple, everyday language.
 - **Request Logging**: Custom middleware for API request logging
 
 ### Data Storage Solutions
-- **Database**: PostgreSQL (configured via Drizzle)
+- **Database**: PostgreSQL (active and configured via Drizzle)
 - **ORM**: Drizzle ORM for type-safe database operations
 - **Connection**: Neon Database serverless connection
-- **Development Storage**: In-memory storage implementation for development/testing
+- **Production Storage**: DatabaseStorage implementation using PostgreSQL
 - **Schema**: Shared schema definitions with Zod validation
+- **Tables**: users, contacts, blog_posts with proper relations and constraints
 
 ## Key Components
 
