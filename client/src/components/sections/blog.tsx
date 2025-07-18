@@ -52,12 +52,19 @@ export function Blog() {
                   </Badge>
                   <span className="text-sm text-muted-foreground flex items-center gap-1">
                     <Calendar className="w-3 h-3" />
-                    {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : "Recent"}
+                    {post.publishedAt ? 
+                        new Date(post.publishedAt).toLocaleDateString("en-GB", {
+                          day: "numeric",
+                          month: "long",
+                          year: "numeric",
+                        })
+                      : "Recent"
+                    }
                   </span>
                 </div>
                 <h3 className="text-xl font-bold mb-3">{post.title}</h3>
                 <p className="text-muted-foreground mb-4">{post.excerpt}</p>
-                <Button className="btn-primary">Read More</Button>
+                <a href={post.url} target="_blank" className="btn-primary">Read More</a>
               </div>
             </div>
           ))}

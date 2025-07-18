@@ -1,5 +1,6 @@
 import { Award, Code, Trophy, Cloud } from "lucide-react";
 import { certifications, personalInfo } from "@/lib/data";
+import { SiLeetcode, SiGeeksforgeeks  } from "react-icons/si";
 
 const iconMap = {
   java: Award,
@@ -38,7 +39,7 @@ export function Certifications() {
           
           <div className="achievement-card">
             <div className="text-4xl mb-4 text-purple-500">
-              <Code className="w-10 h-10 mx-auto" />
+              <SiLeetcode className="w-10 h-10 mx-auto" />
             </div>
             <h3 className="text-lg font-bold mb-2">LeetCode Profile</h3>
             <p className="text-muted-foreground mb-3">
@@ -56,7 +57,7 @@ export function Certifications() {
           
           <div className="achievement-card">
             <div className="text-4xl mb-4 text-orange-500">
-              <Award className="w-10 h-10 mx-auto" />
+              <SiGeeksforgeeks className="w-10 h-10 mx-auto" />
             </div>
             <h3 className="text-lg font-bold mb-2">GeeksforGeeks</h3>
             <p className="text-muted-foreground mb-3">
