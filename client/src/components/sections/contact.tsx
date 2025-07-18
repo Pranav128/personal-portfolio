@@ -69,31 +69,48 @@ export function Contact() {
           <div>
             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
             <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center">
+              <div className="flex items-center gap-4 hover:bg-muted/50 p-4 rounded-lg transition-colors group">
+                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Mail className="w-5 h-5 text-blue-500" />
                 </div>
                 <div>
                   <h4 className="font-medium">Email</h4>
-                  <p className="text-muted-foreground">{personalInfo.email}</p>
+                  <a 
+                    href={`mailto:${personalInfo.email}`}
+                    className="text-muted-foreground hover:text-primary transition-colors underline-offset-4 hover:underline"
+                  >
+                    {personalInfo.email}
+                  </a>
                 </div>
               </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
+              <div className="flex items-center gap-4 hover:bg-muted/50 p-4 rounded-lg transition-colors group">
+                <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Phone className="w-5 h-5 text-green-500" />
                 </div>
                 <div>
                   <h4 className="font-medium">Phone</h4>
-                  <p className="text-muted-foreground">{personalInfo.phone}</p>
+                  <a 
+                    href={`tel:${personalInfo.phone}`}
+                    className="text-muted-foreground hover:text-primary transition-colors underline-offset-4 hover:underline"
+                  >
+                    {personalInfo.phone}
+                  </a>
                 </div>
               </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center">
+              <div className="flex items-center gap-4 hover:bg-muted/50 p-4 rounded-lg transition-colors group">
+                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   <MapPin className="w-5 h-5 text-purple-500" />
                 </div>
                 <div>
                   <h4 className="font-medium">Location</h4>
-                  <p className="text-muted-foreground">{personalInfo.location}</p>
+                  <a 
+                    href={`https://maps.google.com/?q=${encodeURIComponent(personalInfo.location)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors underline-offset-4 hover:underline"
+                  >
+                    {personalInfo.location}
+                  </a>
                 </div>
               </div>
             </div>

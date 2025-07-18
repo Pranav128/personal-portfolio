@@ -103,7 +103,8 @@ export class MemStorage implements IStorage {
     const blogPost: BlogPost = { 
       ...insertBlogPost, 
       id, 
-      publishedAt: new Date() 
+      publishedAt: new Date(),
+      imageUrl: insertBlogPost.imageUrl || null
     };
     this.blogPosts.set(id, blogPost);
     return blogPost;

@@ -10,7 +10,7 @@ const iconMap = {
 
 export function Certifications() {
   return (
-    <section className="section">
+    <section id="certifications" className="section">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">

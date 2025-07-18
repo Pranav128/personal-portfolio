@@ -40,14 +40,14 @@ export function SkillBar({ skill, level, delay = 0 }: SkillBarProps) {
   }, [isVisible, level, delay]);
 
   return (
-    <div ref={ref} className="space-y-2">
+    <div ref={ref} className="space-y-2 group">
       <div className="flex justify-between items-center">
-        <span className="font-medium text-sm">{skill}</span>
-        <span className="text-sm text-muted-foreground">{level}%</span>
+        <span className="font-medium text-sm group-hover:text-primary transition-colors">{skill}</span>
+        <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors font-bold">{level}%</span>
       </div>
-      <div className="skill-bar">
+      <div className="skill-bar group-hover:shadow-md transition-shadow">
         <div
-          className="skill-progress"
+          className="skill-progress group-hover:brightness-110 transition-all"
           style={{ width: `${animatedLevel}%` }}
         />
       </div>

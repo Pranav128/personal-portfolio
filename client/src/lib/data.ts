@@ -96,10 +96,46 @@ export const projects = [
     ]
   },
   {
+    title: "Task Manager Application",
+    description: "Modern task management system with real-time collaboration, priority tracking, and intuitive drag-and-drop interface for enhanced productivity.",
+    technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    features: [
+      "Real-time collaboration with team members",
+      "Drag-and-drop task management interface",
+      "Priority tracking and deadline notifications",
+      "Advanced filtering and search capabilities"
+    ]
+  },
+  {
+    title: "Personal Expense Tracker",
+    description: "Comprehensive expense tracking application with budget planning, category management, and detailed financial analytics for better money management.",
+    technologies: ["React Native", "Firebase", "Chart.js", "Redux"],
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    features: [
+      "Smart budget planning and alerts",
+      "Category-wise expense categorization",
+      "Interactive charts and financial reports",
+      "Cloud sync across multiple devices"
+    ]
+  },
+  {
+    title: "Bank Management System",
+    description: "Secure banking application with account management, transaction processing, and comprehensive reporting for efficient financial operations.",
+    technologies: ["Java", "Spring Boot", "PostgreSQL", "JWT"],
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    features: [
+      "Multi-layered security with encryption",
+      "Real-time transaction processing",
+      "Comprehensive audit trail and reporting",
+      "Role-based access control system"
+    ]
+  },
+  {
     title: "Sorting Visualizer",
     description: "Interactive app to visualize different sorting algorithms with real-time performance analysis, adjustable speed controls, and responsive design.",
     technologies: ["Angular", "TypeScript", "HTML/CSS", "Tailwind"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     features: [
       "Multiple sorting algorithms visualization",
       "Interactive speed and array size controls",
@@ -140,6 +176,14 @@ export const education = [
     period: "2017 - 2019",
     grade: "Percentage: 66.00%",
     description: "Focused on Mathematics, Physics, and Chemistry with strong analytical skills development."
+  },
+  {
+    degree: "Secondary School Certificate",
+    field: "Science & Mathematics",
+    institution: "MRSV and Jr. College, Phaltan",
+    period: "2015 - 2017",
+    grade: "Percentage: 87.80%",
+    description: "Strong foundation in Mathematics, Science, and English with excellent academic performance and leadership activities."
   }
 ];
 

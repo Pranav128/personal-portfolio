@@ -7,10 +7,10 @@ export function Experience() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
-            Work <span className="gradient-text">Experience</span>
+            Experience & <span className="gradient-text">Education</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            My professional journey and achievements
+            My professional journey and educational background
           </p>
         </div>
         

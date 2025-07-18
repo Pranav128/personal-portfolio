@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
   --background: hsl(0, 0%, 100%);
@@ -390,6 +390,7 @@
   }
 }
 
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .profile-image {
     width: 200px;
@@ -398,5 +399,131 @@
   
   .section {
     padding: 60px 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .text-5xl {
+    font-size: 2.5rem;
+  }
+  
+  .text-7xl {
+    font-size: 3rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+  
+  .text-3xl {
+    font-size: 1.75rem;
+  }
+  
+  .glass-effect {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  
+  .project-card {
+    padding: 1rem;
+  }
+  
+  .timeline-item {
+    padding-left: 2rem;
+  }
+  
+  .nav-link {
+    padding: 0.75rem 1rem;
+  }
+  
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .social-link {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .achievement-card {
+    padding: 1rem;
+  }
+  
+  .experience-card {
+    padding: 1rem;
+  }
+  
+  .blog-card {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .text-4xl {
+    font-size: 1.875rem;
+  }
+  
+  .glass-effect {
+    padding: 0.75rem;
+    margin: 0.25rem;
+  }
+  
+  .timeline-item {
+    padding-left: 1.5rem;
+  }
+  
+  .timeline-item::before {
+    left: -4px;
+    width: 12px;
+    height: 12px;
+  }
+  
+  .timeline-item::after {
+    left: 2px;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .md\:grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .lg\:grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .flex-col {
+    gap: 1rem;
+  }
+  
+  .sm\:flex-row {
+    flex-direction: column;
+  }
+}
+
+/* Tablet Responsiveness */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+  
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .profile-image {
+    width: 250px;
+    height: 250px;
   }
 }
