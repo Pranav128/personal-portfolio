@@ -23,8 +23,8 @@ export function Projects() {
               technologies={project.technologies}
               image={project.image}
               features={project.features}
-              liveUrl="#"
-              githubUrl="#"
+              liveUrl={project.liveUrl}
+              githubUrl={project.githubUrl}
             />
           ))}
         </div>

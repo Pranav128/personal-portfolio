@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 interface ProjectCardProps {
   title: string;
@@ -65,7 +66,7 @@ export function ProjectCard({
         {githubUrl && (
           <Button variant="outline" className="px-4" asChild>
             <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-              <Github className="w-4 h-4" />
+              <FaGithub className="w-4 h-4" />
             </a>
           </Button>
         )}
